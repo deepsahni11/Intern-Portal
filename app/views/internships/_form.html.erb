@@ -1,0 +1,14 @@
+<%= simple_form_for @internship do |f| %>
+  <%= f.input :work , label: 'Job Profile' %>
+  <%= f.input :details,label: 'Details of the Job Profile' %>
+  <%= f.input :stipend %>
+
+  <%= f.input :duration %>
+  <%= f.input :location %>
+
+  <%= f.input :benefits, label: "Other Benefits" %>
+
+
+  <%= f.input :position_status, label: 'Position Status (Open/Close)'%>
+  <%= f.button :submit ,label: 'Submit' %>
+<% end %>

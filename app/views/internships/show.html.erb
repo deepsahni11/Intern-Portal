@@ -1,0 +1,19 @@
+ <h2><%= @internship.work %></h2>
+ <h6><%= @internship.position_status %></h6>
+ <h3><%= @internship.location %></h3>
+ <h4><%= @internship.duration %></h4>
+ <h5><%= @internship.stipend %></h5>
+
+ <p><%= @internship.details %></p>
+  <p><%= @internship.benefits %></p>
+
+<div clss="links btn-group">
+<% if user_company_signed_in? %>
+<% if @internship.user_company_id == current_user_company.id %>
+<%= link_to "Add Internships", new_internship_path %>
+<br><br>
+<%= link_to "Edit", edit_internship_path(@internship) %>
+<%= link_to "Delete", internship_path(@internship), method: :delete, data: {confirm: "Are you sure?"} %>
+<%end%>
+<%end%>
+</div>
